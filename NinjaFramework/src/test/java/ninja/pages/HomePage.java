@@ -1,34 +1,39 @@
 package ninja.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import core.framework.web.WebBase;
 
-public class HomePage{
-	WebDriver driver;
-	public HomePage(WebDriver driver) {
-		this.driver = driver;
+public class HomePage extends WebBase{
+
+	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(id="nav-link-accountList")
-	WebElement btnSignIn;
+	private WebElement btnSignIn;
 	
 	@FindBy(id="ap_email")
-	WebElement email;
+	private WebElement email;
 	
 	@FindBy(id="continue")
-	WebElement btnContinue;
+	private WebElement btnContinue;
 	
 	@FindBy(id="ap_password")
-	WebElement password;
+	private WebElement password;
 	
 	@FindBy(id="signInSubmit")
-	WebElement btnSubmit;
+	private WebElement btnSubmit;
 	
 	@FindBy(id="nav-link-accountList")
-	WebElement navAccount;
+	private WebElement navAccount;
+
+	@FindBy(id="twotabsearchtextbox")
+	private WebElement searchBar;
+	
+	@FindBy(id="nav-search-submit-button")
+	private WebElement searchBtn;
 		
 	public WebElement sigIn() {
 		return btnSignIn;
@@ -53,7 +58,14 @@ public class HomePage{
 	public WebElement navAccount() {
 		return navAccount;
 	}
+
+	public WebElement searchBar(){
+		return searchBar;
+	}
 	
+	public WebElement searchBtn(){
+		return searchBtn;
+	}
 	
 	
 }

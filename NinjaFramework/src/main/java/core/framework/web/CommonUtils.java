@@ -10,14 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonUtils extends WebBase {
 
-	WebDriver driver;
-	public CommonUtils(WebDriver driver) {
-		this.driver = driver;
+	public CommonUtils() {
 		PageFactory.initElements(driver, this);
 	}
 	
 	public WebElement waitForElement(WebElement locator) {
-		WebDriverWait wait = new WebDriverWait(this.driver, 5);
+		WebDriverWait wait = new WebDriverWait(WebBase.driver, 5);
 		return wait.until(ExpectedConditions.visibilityOfElementLocated((By) locator));
 	}
 	

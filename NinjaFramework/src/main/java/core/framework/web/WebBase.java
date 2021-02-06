@@ -1,24 +1,34 @@
 package core.framework.web;
 
+import java.io.IOException;
+import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebBase {
-	protected WebDriver driver;
+	public static WebDriver driver;
+	public static Properties prop;
 
-	@BeforeTest
-	public void initializeDriver() {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+	public static void initializeDriver() throws IOException {
+		String browsername = ReadConfigData.config("browser");
+		if (browsername.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get(ReadConfigData.config("url"));
+		} else if (browsername.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.get(ReadConfigData.config("url"));
+		}
 	}
 
 	@AfterTest
-	public void Quitdriver() {
+	public void quitdriver() {
 		driver.quit();
 	}
 }
