@@ -9,16 +9,16 @@ import org.testng.annotations.Test;
 import core.framework.web.CommonUtils;
 import core.framework.web.ReadConfigData;
 import core.framework.web.WebBase;
-import ninja.pages.HomePage;
+import ninja.pages.AmazonLoginPage;
 
-public class TC1 extends WebBase{
-	HomePage homePage ;
+public class AmazonLoginTest extends WebBase{
+	AmazonLoginPage homePage ;
 	CommonUtils utils ;
 
 	@BeforeMethod
 	public void setUp() throws IOException {
 		initializeDriver();
-		homePage = new HomePage();
+		homePage = new AmazonLoginPage();
 		utils = new CommonUtils();
 	}
 	
@@ -29,13 +29,14 @@ public class TC1 extends WebBase{
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void SignInAndValidateAccountName() throws InterruptedException, IOException {	
+		utils.navigateToUrl(ReadConfigData.config("AmazonUrl"));
 		homePage.sigIn().click();
 		/*Enter your user name and password in the configuration.properties file*/
-		homePage.enterEmail().sendKeys(ReadConfigData.config("username"));
+		homePage.enterEmail().sendKeys(ReadConfigData.config("AmazonUsername"));
 		homePage.continueBtn().click();
-		homePage.password().sendKeys(ReadConfigData.config("password"));
+		homePage.password().sendKeys(ReadConfigData.config("AmazonPassword"));
 		homePage.submit().click();
 		boolean isNamePresent = homePage.navAccount().getText().contains("Sanjeev");
 		System.out.println(isNamePresent);
@@ -45,9 +46,20 @@ public class TC1 extends WebBase{
 	}
 
 	@Test(enabled=true)
-	public void searchAnItem(){
+	public void searchAnItem() throws InterruptedException, IOException {
+		utils.navigateToUrl(ReadConfigData.config("AmazonUrl"));
 		homePage.searchBar().sendKeys("One plus nord");
 		homePage.searchBtn().click();
+		utils.mouseHover(homePage.sigIn());
+		Thread.sleep(1000);
 	}
+
+	@Test(enabled=true)
+	public void searchAVideoInYoutube() throws InterruptedException {
+		driver.get("https://youtu.be/HzPpKLrRG7M");
+		homePage.searchBtn().click();
+		Thread.sleep(5000);
+	}
+	
 	
 }

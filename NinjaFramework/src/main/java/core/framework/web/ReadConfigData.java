@@ -6,14 +6,19 @@ import java.util.Properties;
 
 public class ReadConfigData extends WebBase{
 	public static Properties prop;
+	public static  FileInputStream fis;
 	
 	public static String config(String text) throws IOException {
 		prop = new Properties();
+		String deviceOS = System.getProperty("os.name");
+        System.out.println("Opening in "+deviceOS);
 		/*For windows machine*/
-		//FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\Configs\\configuration.properties"); 
+		//fis = new FileInputStream(System.getProperty("user.dir")+"\\Configs\\configuration.properties"); 
 		
 		/**For Mac */
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//Configs//configuration.properties");
+		if(deviceOS.contains("Mac OS X")){
+		fis = new FileInputStream(System.getProperty("user.dir")+"//Configs//configuration.properties");
+		}
 		prop.load(fis);
 		String output=prop.getProperty(text);
 		return output;	

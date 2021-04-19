@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import core.framework.web.WebBase;
 
-public class HomePage extends WebBase{
+public class AmazonLoginPage extends WebBase{
 
-	public HomePage() {
+	public AmazonLoginPage() {
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -66,6 +66,5 @@ public class HomePage extends WebBase{
 	public WebElement searchBtn(){
 		return searchBtn;
 	}
-	
 	
 }

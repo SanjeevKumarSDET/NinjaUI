@@ -14,11 +14,11 @@ public class CommonUtils extends WebBase {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public WebElement waitForElement(WebElement locator) {
-		WebDriverWait wait = new WebDriverWait(WebBase.driver, 5);
-		return wait.until(ExpectedConditions.visibilityOfElementLocated((By) locator));
+	public void waitForElement(WebElement locator) {
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.visibilityOf(locator));
 	}
-	
+
 	public WebElement mouseHover(WebElement locator) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(locator).perform();
@@ -36,5 +36,13 @@ public class CommonUtils extends WebBase {
 			e.printStackTrace();
 		}
 		return locator;
+	}
+
+	public void navigateToUrl(String url){
+		try {
+			driver.get(url);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -18,12 +18,10 @@ public class WebBase {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			driver.get(ReadConfigData.config("url"));
 		} else if (browsername.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-			driver.get(ReadConfigData.config("url"));
 		}
 	}
 
