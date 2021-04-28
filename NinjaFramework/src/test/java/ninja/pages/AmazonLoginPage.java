@@ -3,6 +3,7 @@ package ninja.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import core.framework.web.WebBase;
 
 public class AmazonLoginPage extends WebBase{
@@ -35,7 +36,7 @@ public class AmazonLoginPage extends WebBase{
 	@FindBy(id="nav-search-submit-button")
 	private WebElement searchBtn;
 		
-	public WebElement sigIn() {
+	public WebElement signIn() {
 		return btnSignIn;
 	}
 	

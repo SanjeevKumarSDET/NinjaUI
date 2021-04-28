@@ -1,23 +1,23 @@
 package ninja.Test;
 
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import core.framework.web.CommonUtils;
 import core.framework.web.ReadConfigData;
-import core.framework.web.WebBase;
+import core.test.TestBase;
 import ninja.pages.AmazonLoginPage;
 
-public class AmazonLoginTest extends WebBase{
+public class AmazonLoginTest extends TestBase{
+	
 	AmazonLoginPage homePage ;
 	CommonUtils utils ;
 
 	@BeforeMethod
-	public void setUp() throws IOException {
-		initializeDriver();
+	public void initsetUp() throws IOException {
 		homePage = new AmazonLoginPage();
 		utils = new CommonUtils();
 	}
@@ -29,10 +29,11 @@ public class AmazonLoginTest extends WebBase{
 	 * @throws InterruptedException
 	 * @throws IOException
 	 */
+	
 	@Test(enabled=true)
 	public void SignInAndValidateAccountName() throws InterruptedException, IOException {	
 		utils.navigateToUrl(ReadConfigData.config("AmazonUrl"));
-		homePage.sigIn().click();
+		homePage.signIn().click();
 		/*Enter your user name and password in the configuration.properties file*/
 		homePage.enterEmail().sendKeys(ReadConfigData.config("AmazonUsername"));
 		homePage.continueBtn().click();
@@ -40,25 +41,26 @@ public class AmazonLoginTest extends WebBase{
 		homePage.submit().click();
 		boolean isNamePresent = homePage.navAccount().getText().contains("Sanjeev");
 		System.out.println(isNamePresent);
-		Assert.assertEquals(isNamePresent, true);
+		AssertJUnit.assertEquals(isNamePresent, true);
 		utils.mouseHover(homePage.navAccount());
 		driver.findElement(By.xpath("//span[text()='Your Orders']")).click();
 	}
 
 	@Test(enabled=true)
 	public void searchAnItem() throws InterruptedException, IOException {
+		homePage = new AmazonLoginPage();
+		utils = new CommonUtils();
 		utils.navigateToUrl(ReadConfigData.config("AmazonUrl"));
 		homePage.searchBar().sendKeys("One plus nord");
 		homePage.searchBtn().click();
-		utils.mouseHover(homePage.sigIn());
+		utils.mouseHover(homePage.signIn());
 		Thread.sleep(1000);
 	}
 
 	@Test(enabled=true)
 	public void searchAVideoInYoutube() throws InterruptedException {
 		driver.get("https://youtu.be/HzPpKLrRG7M");
-		homePage.searchBtn().click();
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 	}
 	
 	
