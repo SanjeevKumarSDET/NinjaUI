@@ -12,12 +12,13 @@ public class ReadConfigData extends WebBase{
 		prop = new Properties();
 		String deviceOS = System.getProperty("os.name");
         System.out.println("Opening in "+deviceOS);
-		/*For windows machine*/
-		//fis = new FileInputStream(System.getProperty("user.dir")+"\\Configs\\configuration.properties"); 
 		
 		/**For Mac */
 		if(deviceOS.contains("Mac OS X")){
 		fis = new FileInputStream(System.getProperty("user.dir")+"//Configs//configuration.properties");
+		}else if(deviceOS.contains("Windows")) {
+			/*For windows machine*/
+			fis = new FileInputStream(System.getProperty("user.dir")+"\\Configs\\configuration.properties"); 
 		}
 		prop.load(fis);
 		String output=prop.getProperty(text);
