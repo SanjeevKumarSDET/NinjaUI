@@ -26,10 +26,10 @@ public class CommonUtils extends WebBase {
 	
 	public WebElement clickOnElement(WebElement locator) {
 		try {
-			if(locator.isDisplayed()) {
+			if(locator.isDisplayed()){
 				driver.findElement(By.id("locator")).click();
 			}else {
-				System.out.print("Element not found");
+				System.out.print(locator+" not found");
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
