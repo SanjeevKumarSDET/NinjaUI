@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class CommonUtils extends WebBase {
 
@@ -13,10 +14,11 @@ public class CommonUtils extends WebBase {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void waitForElement(WebElement locator) {
+	public static void waitForElement(WebElement locator) {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.visibilityOf(locator));
 	}
+	
 
 	public WebElement mouseHover(WebElement locator) {
 		Actions actions = new Actions(driver);
@@ -24,17 +26,28 @@ public class CommonUtils extends WebBase {
 		return locator;
 	}
 	
-	public WebElement clickOnElement(WebElement locator) {
+	public void clickOnElement(WebElement locator) {
 		try {
 			if(locator.isDisplayed()){
-				driver.findElement(By.id("locator")).click();
+				locator.click();
 			}else {
 				System.out.print(locator+" not found");
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return locator;
+	}
+	
+	public void enterText(WebElement locator,String text) {
+		try {
+			if(locator.isDisplayed()){
+				locator.sendKeys(text);
+			}else {
+				System.out.print(locator+" not found");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void navigateToUrl(String url){
@@ -43,5 +56,19 @@ public class CommonUtils extends WebBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static Boolean isElementPresent(WebElement locator) {
+		waitForElement(locator);
+		Boolean visible=true;
+			if(locator.isDisplayed()){
+				Assert.assertTrue(true);
+				System.out.println(locator+"found!!");
+				return visible;
+			}else {
+				System.out.print(locator+" not found");	
+				Assert.fail();
+				return false;
+			}
 	}
 }

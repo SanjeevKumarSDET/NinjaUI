@@ -14,7 +14,7 @@ public class WebBase {
 	public static Properties prop;
 
 	public static void initializeDriver() throws IOException {
-		String browsername = ReadConfigData.config("browser");
+		String browsername = ReadData.fromConfig("browser");
 		if (browsername.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();

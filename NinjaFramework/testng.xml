@@ -3,11 +3,12 @@
 <suite name="Suite">
 <listeners>
        <listener class-name="testNGListeners.CustomListener"/>
+       <listener class-name="core.extentReportListener.ExtentReportNG"/>
   </listeners>
   <test thread-count="5" name="Test">
   
     <classes>
-      <class name="ninja.Test.AmazonLoginTest"/>
+      <class name="ninja.Test.OrangeHRMLoginTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

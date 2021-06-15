@@ -7,18 +7,18 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import core.framework.web.CommonUtils;
-import core.framework.web.ReadConfigData;
+import core.framework.web.ReadData;
 import core.test.TestBase;
-import ninja.pages.AmazonLoginPage;
+import ninja.pom.AmazonLoginPOM;
 
 public class AmazonLoginTest extends TestBase{
 	
-	AmazonLoginPage homePage ;
+	AmazonLoginPOM homePage ;
 	CommonUtils utils ;
 
 	@BeforeMethod
 	public void initsetUp() throws IOException {
-		homePage = new AmazonLoginPage();
+		homePage = new AmazonLoginPOM();
 		utils = new CommonUtils();
 	}
 	
@@ -32,12 +32,12 @@ public class AmazonLoginTest extends TestBase{
 	
 	@Test(enabled=true)
 	public void SignInAndValidateAccountName() throws InterruptedException, IOException {	
-		utils.navigateToUrl(ReadConfigData.config("AmazonUrl"));
+		utils.navigateToUrl(ReadData.fromConfig("AmazonUrl"));
 		homePage.signIn().click();
 		/*Enter your user name and password in the configuration.properties file*/
-		homePage.enterEmail().sendKeys(ReadConfigData.config("AmazonUsername"));
+		homePage.enterEmail().sendKeys(ReadData.fromConfig("AmazonUsername"));
 		homePage.continueBtn().click();
-		homePage.password().sendKeys(ReadConfigData.config("AmazonPassword"));
+		homePage.password().sendKeys(ReadData.fromConfig("AmazonPassword"));
 		homePage.submit().click();
 		boolean isNamePresent = homePage.navAccount().getText().contains("Sanjeev");
 		System.out.println(isNamePresent);
@@ -48,9 +48,9 @@ public class AmazonLoginTest extends TestBase{
 
 	@Test(enabled=true)
 	public void searchAnItem() throws InterruptedException, IOException {
-		homePage = new AmazonLoginPage();
+		homePage = new AmazonLoginPOM();
 		utils = new CommonUtils();
-		utils.navigateToUrl(ReadConfigData.config("AmazonUrl"));
+		utils.navigateToUrl(ReadData.fromConfig("AmazonUrl"));
 		homePage.searchBar().sendKeys("One plus nord");
 		homePage.searchBtn().click();
 		utils.mouseHover(homePage.signIn());

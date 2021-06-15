@@ -1,62 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-28T13:45:45 IST" name="Default suite" finished-at="2021-04-28T13:46:19 IST" duration-ms="33955">
+  <suite started-at="2021-06-07T15:11:53 IST" name="Default suite" finished-at="2021-06-07T15:12:18 IST" duration-ms="24738">
     <groups>
     </groups>
-    <test started-at="2021-04-28T13:45:45 IST" name="Default test" finished-at="2021-04-28T13:46:19 IST" duration-ms="33955">
-      <class name="ninja.Test.AmazonLoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:45:45 IST" name="setUp" finished-at="2021-04-28T13:45:47 IST" duration-ms="2425" status="PASS">
+    <test started-at="2021-06-07T15:11:53 IST" name="Default test" finished-at="2021-06-07T15:12:18 IST" duration-ms="24738">
+      <class name="ninja.Test.OrangeHRMHomeTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ninja.Test.OrangeHRMHomeTest@4e7912d8]" started-at="2021-06-07T15:11:53 IST" name="setUp" finished-at="2021-06-07T15:11:57 IST" duration-ms="3745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="initsetUp()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:45:47 IST" name="initsetUp" finished-at="2021-04-28T13:45:48 IST" duration-ms="21" status="PASS">
+        <test-method is-config="true" signature="initSetup()[pri:0, instance:ninja.Test.OrangeHRMHomeTest@4e7912d8]" started-at="2021-06-07T15:11:57 IST" name="initSetup" finished-at="2021-06-07T15:11:57 IST" duration-ms="76" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- initsetUp -->
-        <test-method signature="SignInAndValidateAccountName()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:45:48 IST" name="SignInAndValidateAccountName" finished-at="2021-04-28T13:46:00 IST" duration-ms="12483" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        </test-method> <!-- initSetup -->
+        <test-method signature="checkBrandImage()[pri:0, instance:ninja.Test.OrangeHRMHomeTest@4e7912d8]" started-at="2021-06-07T15:11:57 IST" name="checkBrandImage" finished-at="2021-06-07T15:12:17 IST" duration-ms="20766" status="FAIL">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#ap_email"}
-  (Session info: chrome=90.0.4430.85)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'TVSNexts-MacBook-Pro.local', ip: '2409:4072:6c92:cd07:7dd0:a8d6:d706:ff7e%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.85, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: /var/folders/d0/y29_4l8x1yz...}, goog:chromeOptions: {debuggerAddress: localhost:51279}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ed88551774efc9e1c46a8b4ac03b7840
-*** Element info: {Using=id, value=ap_email}]]>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#ap_email"}
-  (Session info: chrome=90.0.4430.85)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'TVSNexts-MacBook-Pro.local', ip: '2409:4072:6c92:cd07:7dd0:a8d6:d706:ff7e%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.85, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: /var/folders/d0/y29_4l8x1yz...}, goog:chromeOptions: {debuggerAddress: localhost:51279}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: ed88551774efc9e1c46a8b4ac03b7840
-*** Element info: {Using=id, value=ap_email}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy12.sendKeys(Unknown Source)
-at ninja.Test.AmazonLoginTest.SignInAndValidateAccountName(AmazonLoginTest.java:38)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.isDisplayed()" because "element" is null
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at core.framework.web.CommonUtils.waitForElement(CommonUtils.java:19)
+at core.framework.web.CommonUtils.isElementPresent(CommonUtils.java:62)
+at ninja.Test.OrangeHRMHomeTest.checkBrandImage(OrangeHRMHomeTest.java:38)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -87,47 +60,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignInAndValidateAccountName -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:00 IST" name="quit" finished-at="2021-04-28T13:46:00 IST" duration-ms="394" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:00 IST" name="setUp" finished-at="2021-04-28T13:46:02 IST" duration-ms="1598" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="initsetUp()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:02 IST" name="initsetUp" finished-at="2021-04-28T13:46:02 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initsetUp -->
-        <test-method signature="searchAVideoInYoutube()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:02 IST" name="searchAVideoInYoutube" finished-at="2021-04-28T13:46:08 IST" duration-ms="5791" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAVideoInYoutube -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:08 IST" name="quit" finished-at="2021-04-28T13:46:08 IST" duration-ms="215" status="PASS">
+        </test-method> <!-- checkBrandImage -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:ninja.Test.OrangeHRMHomeTest@4e7912d8]" started-at="2021-06-07T15:12:17 IST" name="quit" finished-at="2021-06-07T15:12:18 IST" duration-ms="120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:08 IST" name="setUp" finished-at="2021-04-28T13:46:09 IST" duration-ms="1100" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="initsetUp()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:09 IST" name="initsetUp" finished-at="2021-04-28T13:46:09 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initsetUp -->
-        <test-method signature="searchAnItem()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:09 IST" name="searchAnItem" finished-at="2021-04-28T13:46:19 IST" duration-ms="9679" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- searchAnItem -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:ninja.Test.AmazonLoginTest@4e7912d8]" started-at="2021-04-28T13:46:19 IST" name="quit" finished-at="2021-04-28T13:46:19 IST" duration-ms="201" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- quit -->
-      </class> <!-- ninja.Test.AmazonLoginTest -->
+      </class> <!-- ninja.Test.OrangeHRMHomeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

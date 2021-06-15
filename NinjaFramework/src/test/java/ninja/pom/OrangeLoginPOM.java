@@ -1,4 +1,4 @@
-package ninja.pages;
+package ninja.pom;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -6,29 +6,29 @@ import org.openqa.selenium.support.PageFactory;
 
 import core.framework.web.WebBase;
 
-public class OrangeHRMLoginPage extends WebBase{
-	public OrangeHRMLoginPage(){
+public class OrangeLoginPOM extends WebBase{
+	public OrangeLoginPOM(){
 		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(id="txtUsername")
-	private WebElement userName;
+	private static WebElement userName;
 	
 	@FindBy(id="txtPassword")
-	private WebElement password;
+	private static WebElement password;
 	
 	@FindBy(id="btnLogin")
-	private WebElement loginBtn;
+	private static WebElement loginBtn;
 	
 	public WebElement userName() {
 		return userName;
 	}
 	
-	public WebElement password() {
+	public static WebElement password() {
 		return password;
 	}
 	
-	public WebElement loginBtn() {
+	public static WebElement loginBtn() {
 		return loginBtn;
 	}
 }

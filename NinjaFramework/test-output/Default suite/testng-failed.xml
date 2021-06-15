@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ninja.Test.AmazonLoginTest">
+      <class name="ninja.Test.OrangeHRMHomeTest">
         <methods>
-          <include name="SignInAndValidateAccountName"/>
+          <include name="checkBrandImage"/>
           <include name="setUp"/>
+          <include name="initSetup"/>
           <include name="quit"/>
-          <include name="initsetUp"/>
         </methods>
-      </class> <!-- ninja.Test.AmazonLoginTest -->
+      </class> <!-- ninja.Test.OrangeHRMHomeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
