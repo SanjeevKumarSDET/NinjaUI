@@ -3,7 +3,7 @@
 <suite name="Suite">
 <listeners>
        <listener class-name="testNGListeners.CustomListener"/>
-       <listener class-name="core.extentReportListener.ExtentReportNG"/>
+       <listener class-name="core.framework.web.ExtentReportNG"/>
   </listeners>
   <test thread-count="5" name="Test">
   

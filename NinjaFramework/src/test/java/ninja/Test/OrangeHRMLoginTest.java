@@ -4,23 +4,22 @@ import java.io.IOException;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
+import com.relevantcodes.extentreports.ExtentReports;
 import core.framework.web.CommonUtils;
 import core.framework.web.ReadData;
-import core.test.ExtentReport;
 import core.test.TestBase;
 import ninja.pom.OrangeLoginPOM;
 
 public class OrangeHRMLoginTest extends TestBase{
 	static OrangeLoginPOM orangeHRMLogin;
 	static CommonUtils utils;
-	ExtentReport report;
+	ExtentReports report;
 
 	@BeforeMethod
 	public void initSetup(){
 		orangeHRMLogin = new OrangeLoginPOM();
 		utils = new CommonUtils();
-		report = new ExtentReport();
+		report = new ExtentReports("");
 	}
 
 @Test

@@ -3,9 +3,12 @@ package core.test;
 import java.io.IOException;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
+import core.framework.web.ExtentReportNG;
 import core.framework.web.WebBase;
 
 public class TestBase extends WebBase{
@@ -20,7 +23,12 @@ public class TestBase extends WebBase{
 	}
 	
 	@AfterMethod
-	public void quit() {
+	public void quit() throws IOException {
+		quitdriver();
+	}
+	
+	@AfterSuite
+	public void quitSuite() {
 		quitdriver();
 	}
 }

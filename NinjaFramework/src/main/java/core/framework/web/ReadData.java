@@ -11,7 +11,6 @@ public class ReadData extends WebBase{
 	public static String fromConfig(String text) throws IOException {
 		prop = new Properties();
 		String deviceOS = System.getProperty("os.name");
-        System.out.println("Opening in "+deviceOS);
 		
 		/**For Mac */
 		if(deviceOS.contains("Mac OS X")){
